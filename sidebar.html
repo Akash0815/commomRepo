@@ -1,0 +1,241 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: whitesmoke;
+            color: #000;
+        }
+        .sideBar{
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            background-color: #243d44;
+            right: -220px;
+            z-index: 1;
+            display: block;
+            transition: 0.3s;
+            top: 0;
+        }
+        .sideBar #close{
+            float: left;
+            margin-left: 10px;
+            color: #2dea8f;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .sideBar ul{
+            list-style: none;
+            margin-top: 15vh;
+        }
+        .sideBar li{
+            font-family: "Raleway" , sans-serif;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: center;
+            transform: 0.2s;
+            cursor: pointer;
+        }
+        .sideBar li a{
+            color:#2dea8f;
+            text-decoration: none;
+            transform: 0.2s !important;
+        }
+        .sideBar li:hover{
+            background-color: #167a8b;
+        }
+        #openButton{
+            font-size: 40px;
+            background: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ion-icon id="openButton" name="menu-outline"></ion-icon>
+    <div class="sideBar" id="sideBar">
+        <a href="" id="close">&times;</a>
+        <ul>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+        </ul>
+
+    </div>
+</body>
+<script>
+    const sideBar = document.getElementById('sideBar');
+    const openButton = document.getElementById('openButton');
+    var sideBarState =false;
+    function sideBarFunction(){
+        if(sideBarState == false){
+            sideBar.style.right = '0';
+            sideBarState = true;
+
+        }else if(sideBarState == true){
+            sideBar.style.right = "-220px";
+            sideBarState = false;
+        }
+    }
+
+    openButton.onclick =()=>{
+        sideBarFunction();
+    }
+    closeBar.onclick=()=>{
+        sideBarFunction();
+    }
+document.onclick =  function(e) {
+    if (e.target.id !=="sideBar" && e.target.id !== "openButton"){
+        sideBar.style.right ="-220px";
+        sideBarState = false;
+    }
+}
+</script>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: whitesmoke;
+            color: #000;
+        }
+        .sideBar {
+            position: fixed;
+            width: 200px;
+            height: 100vh;
+            background-color: #243d44;
+            right: -220px;
+            z-index: 1;
+            transition: 0.3s;
+            top: 0;
+        }
+        .sideBar #close {
+            float: left;
+            margin-left: 10px;
+            color: #2dea8f;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .sideBar ul {
+            list-style: none;
+            margin-top: 15vh;
+        }
+        .sideBar li {
+            font-family: "Raleway", sans-serif;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .sideBar li a {
+            color: #2dea8f;
+            text-decoration: none;
+        }
+        .sideBar li:hover {
+            background-color: #167a8b;
+        }
+        #openButton {
+            font-size: 40px;
+            background: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ion-icon id="openButton" name="menu-outline"></ion-icon>
+    <div class="sideBar" id="sideBar">
+        <a href="javascript:void(0)" id="close">&times;</a>
+        <ul>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+            <li>
+                <h3>
+                    <a href="">Main</a>
+                </h3>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const sideBar = document.getElementById('sideBar');
+        const openButton = document.getElementById('openButton');
+        const closeButton = document.getElementById('close');
+        let sideBarState = false;
+
+        function sideBarFunction() {
+            if (sideBarState == false) {
+                sideBar.style.right = '0';
+                sideBarState = true;
+            } else {
+                sideBar.style.right = "-220px";
+                sideBarState = false;
+            }
+        }
+
+        openButton.onclick = () => {
+            sideBarFunction();
+        };
+
+        closeButton.onclick = () => {
+            sideBarFunction();
+        };
+
+        document.onclick = function(e) {
+            if (e.target.id !== "sideBar" && e.target.id !== "openButton") {
+                sideBar.style.right = "-220px";
+                sideBarState = false;
+            }
+        };
+    </script>
+</body>
+</html>

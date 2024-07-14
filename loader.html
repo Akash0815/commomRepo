@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="shadow"></div>
+
+    <style>
+        body{
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            font-family: "Poppins", sans-serif;
+        }
+        .shadow{
+            height: 10px;
+            width: 30px;
+            background-color: #000;
+            filter: blur(10px);
+            animation: forwards shadow 6s;
+        }
+        .loader{
+            background: rgb(248, 196, 196);
+            transform: translate(0, -50px);
+            z-index: 1;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+            animation: forwards hop 6s;
+
+        }
+        @keyframes shadow{
+            0%{
+                width:50px;
+                opacity: 1;
+            }
+            25%{
+                width: 30px;
+                opacity: 1;
+            }
+            50%{
+                transform: translateY(0);
+            
+            opacity: 1;
+        }
+        75%{
+            width: 50px;
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+
+        }
+        @keyframes hop{
+            0%{
+                width:50px;
+                height: 50px;
+                transform: translateY(0);
+border-radius: 50%;
+            }
+            25%{
+                width:50px;
+                transform: translateY(-50px);
+border-radius: 50%;
+height: 50px;
+            }
+            50%{
+                width:50px;
+                height: 44px;
+                transform: translateY(6px);
+border-radius: 50%;
+        }
+        75%{
+            width:50px;
+                height: 50px;
+                transform: translateY(-50px);
+border-radius: 50%;
+        }
+        100%{
+            width:100%;
+                height: 100vh;
+                transform: translateY(6px);
+border-radius: 0;
+        }
+
+        }
+    </style>
+</body>
+</html>
